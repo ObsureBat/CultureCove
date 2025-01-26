@@ -1,4 +1,15 @@
+
+:root {
+    --background-color: #fff;
+    --text-color: #333;
+    --header-bg-color: #f1f1f1;
+    --footer-bg-color: #ddd;
+}
+
+
 body {
+    padding-bottom: 200px;
+    margin-bottom: 200px; 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -12,13 +23,6 @@ body {
 @font-face {
     font-family: rejouice;
     src: url(./fonts/Rejouice-Headline.ttf);
-<<<<<<< HEAD
-}
-video::-webkit-media-controls-fullscreen-button
-{
-        display: none !important;
-=======
->>>>>>> f79d9ad53de281ce1b4ff6a3d6ee9490d608d9e3
 }
 * {
     margin: 0;
@@ -30,6 +34,7 @@ html, body {
     height: 100%;
     width: 100%;
     background: #fff;
+    margin-bottom: 200px;
 }
 
 #loader {
@@ -49,6 +54,7 @@ html, body {
     font-size: 3vw;
 }
 #page1 {
+    background-color: var(--header-bg-color);
     height:100vh;
     width:100%;
     position: relative;
@@ -101,6 +107,52 @@ nav h4 {
     font-size: 1.4vw;
     font-weight: 100;
 }
+.menu-btn {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.submenu-list {
+    display: none;
+}
+
+.submenu:hover .submenu-list {
+    display: block;
+}
+
+.submenu-list li {
+    margin-bottom: 5px;
+}
+
+
 
 #page1-content h1 {
     font-family: rejouice;
@@ -146,7 +198,7 @@ hr{
     padding: 2.8vw;
 }
 #page2>.heading h1{
-    font-size: 4.2vw;
+    font-size: 3.5vw;
     font-weight: 500;
 }
 #space {
@@ -187,6 +239,38 @@ hr{
     width: 100%;
     margin-top: 8vw;
 }
+.box {
+    position: relative;
+    width: 300px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity */
+    display: none;
+}
+
+.view-more {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.box:hover .overlay {
+    display: block;
+}
+
+
 #page3-elements .box {
     height: 100%;
     width: 32.5%;
@@ -206,6 +290,7 @@ hr{
     position: absolute;
     transition: all linear 0.7s;
 }
+
 #page3-elements>.box:hover img{
     opacity: 0;
 }
@@ -240,6 +325,8 @@ hr{
 #page5 {
     height: 100vh;
     width:100%;
+    min-height: calc(100vh - 100px); /* Adjust the margin height here */
+    padding-bottom: 200px;
 }
 #page5 h1 {
     font-size: 10vw;
@@ -260,10 +347,111 @@ hr{
 }
 
 .swiper-slide img{
-    width:100%;
+    width: 75%;
+    height: 75%;
 }
 .swiper-wrapper {
     align-items:baseline;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
+    padding-bottom: 100px;
 }
+#bottom-margin {
+    height: 100px; /* Adjust the height as needed for the desired margin */
+}
+#page56 {
+    text-align: center;
+}
+
+#map-container {
+    margin-bottom: 20px;
+}
+
+#image-container img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#image-container img:hover {
+    transform: scale(1.1);
+}
+.video-container {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.147); /* Light shadow for visibility */
+    transform: translateY(-5vh); /* Lifting the container up */
+  }
+  video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .overlay-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 7em;
+    font-family: 'rejouice', sans-serif;
+    z-index: 5;
+  }
+  .overlay-text span {
+    display: inline-block;
+    animation: pop-in 0.5s ease forwards;
+  }
+  @keyframes pop-in {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+  }
+  @font-face {
+    font-family: 'rejouice';
+    src: url('./fonts/Rejouice-Headline.ttf') format('truetype');
+  }
+  .content {
+    height: 35vh; /* Adjusted for better balance */
+    background: #ffffff;
+    padding: 20px;
+    color: rgb(0, 0, 0); /* Makes text visible on black background */
+    position: relative; /* Added position for absolute element */
+  }
+  .content .animated-line {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+    font-size: 2em;
+    font-family: 'rejouice', sans-serif;
+    animation: slide-up 1s ease forwards;
+    opacity: 0;
+  }
+  @keyframes slide-up {
+    from { transform: translate(-50%, 50%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+  }
+  .circular-image {
+    position: absolute;
+    top: 75%; /* Centered on the border */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 200px; 
+    height: 200px;
+    background: url('https://www.experienceadventurevacations.com/public/blog_images/things-to-do-in-same-day-tour-of-jaipur-1677064522.webp') no-repeat center center;
+    background-size: cover;
+    z-index: 10;
+    border: 5px solid white; /* Adding a border to make it stand out */
+  }
+
+
+

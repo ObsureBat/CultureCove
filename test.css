@@ -1,0 +1,221 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Page Styles */
+.page {
+    scroll-snap-align: start; /* Snap to the start of each page */
+}
+
+/* Page 1 & 2 Styles */
+.video-container {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.147);
+    transform: translateY(-5vh);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.overlay-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 7em;
+    font-family: 'rejouice', sans-serif;
+    z-index: 5;
+}
+
+.overlay-text span {
+    display: inline-block;
+    animation: pop-in 0.5s ease forwards;
+}
+
+@keyframes pop-in {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+@font-face {
+    font-family: 'rejouice';
+    src: url('./fonts/Rejouice-Headline.ttf') format('truetype');
+}
+
+.content {
+    height: 35vh;
+    background: #ffffff;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.content .animated-line {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+    font-size: 2em;
+    font-family: 'rejouice', sans-serif;
+    animation: slide-up 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slide-up {
+    from { transform: translate(-50%, 50%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.circular-image {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 200px; 
+    height: 200px;
+    background: url('https://www.experienceadventurevacations.com/public/blog_images/things-to-do-in-same-day-tour-of-jaipur-1677064522.webp') no-repeat center center;
+    background-size: cover;
+    z-index: 10;
+    border: 5px solid white;
+}
+
+/* Page 2 Styles */
+#page2 {
+    background: #FAF8F3;
+    color: #0E0E0E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#page2 > #nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#page2 > #nav .elem h1 {
+    font-family: nb;
+    font-size: 1.67vw;
+    font-weight: 100;
+}
+
+#page2 > .heading {
+    max-width: 800px;
+    text-align: center;
+}
+
+#page2 > .heading h1 {
+    font-size: 3.5vw;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#space {
+    margin-left: 8vw;
+}
+
+/* Page 3 & 4 Styles */
+#page3, #page4 {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw;
+    scroll-snap-align: start; /* Snap to the start of each page */
+    background-color: #f5f5f5; /* Light background color */
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Limit content width for better readability */
+}
+
+.text {
+    text-align: center; /* Center-align text */
+}
+
+.text h3 {
+    font-size: 2.5em; /* Increase heading size */
+    margin-bottom: 20px; /* Add more space below heading */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    color: #333; /* Darken text color */
+}
+
+.text p {
+    font-size: 1.2em; /* Increase paragraph font size */
+    line-height: 1.6; /* Add more line height for better readability */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    color: #555; /* Darken text color */
+}
+
+.image-container {
+    width: 80%; /* Reduce width for better alignment */
+    max-width: 500px; /* Limit maximum width */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    overflow: hidden;
+    margin-top: 20px; /* Add margin to separate from text */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add subtle box shadow */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05); /* Increase scale on hover */
+}
+
+/* Page 5 Styles */
+#page5 {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start; /* Snap to the start of each page */
+    background-color: #f9f9f9; /* Lighter background color */
+}
+
+#map-container {
+    max-width: 800px; /* Limit map container width */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add subtle box shadow */
+}
+
+#map-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
